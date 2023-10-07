@@ -2,7 +2,7 @@
 ## Goal
 The goal of this program is to calculate the maximum product of numbers passed on a route that starts at the top and ends somewhere on the base of a number triangle. Each step can go either diagonally down to the left or down to the right. The following is an example of a number triangle:  
 
-![Number Triangle](https://github.com/AMoore86/Portfolio/new/main/Dynamic%20Programming%20-%20Number%20Triangle/NumberTriangle.png)
+![Number Triangle](https://github.com/AMoore86/Portfolio/blob/main/Dynamic%20Programming%20-%20Number%20Triangle/NumberTriangle.png)
 
 ## The Program
 ### Input
