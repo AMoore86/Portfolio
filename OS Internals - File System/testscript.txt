@@ -1,0 +1,39 @@
+# testscript.txt - Alexander Moore - Assignment 3
+mkfs D2
+mkdir sky
+cd sky
+mkdir cloud
+mkdir bird
+cd ..
+cp @ReadMe.txt read
+mv /read /sky/cloud
+ls /sky/cloud
+inode 5
+ls
+ln /sky/cloud/read
+ln /sky/cloud/read /sky/bird/tree
+cp read copy
+ls
+ls /sky/bird
+mv /sky/bird/tree /sky/cloud
+mkdir ground
+ln -s /sky/cloud /sky/soft
+ls sky
+ln -s ground grass
+rm read
+ls
+cp grass trash
+cd /sky/soft
+ls 
+cd ..
+ls
+cd /
+cp @fs33types.hpp large
+ln large largeLink
+rm grass
+ls
+cd sky
+mv soft bird
+cd bird
+ls
+quit
