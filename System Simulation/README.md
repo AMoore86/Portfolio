@@ -25,14 +25,14 @@ Additionally, this system contains a third factor (named Pesticide) which is app
 ###Results
 Below are the results of the simulation run with slightly different parameters. These parameters affect whether the system is stable or unstable.  
 
-####Unstable Ecosystem
-![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/UnstablePlot01.png)
-![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/UnstablePlot02.png)
-![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/UnstablePlot03.png)
+####Unstable Ecosystem  
+![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/UnstablePlot01.png)  
+![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/UnstablePlot02.png)  
+![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/UnstablePlot03.png)  
 
-####Stable Ecosystem
-![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/StablePlot01.png)
-![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/StablePlot02.png)
-![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/StablePlot03.png)  
+####Stable Ecosystem  
+![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/StablePlot01.png)  
+![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/StablePlot02.png)  
+![Unstable Plot 01](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/StablePlot03.png)   
 
-The result of this project are further discussed in the corresponding report: [Report Link](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/ProjectReport.pdf) 
+The results of this project are further discussed in the corresponding report: [Report Link](https://github.com/AMoore86/Portfolio/blob/main/System%20Simulation/ProjectReport.pdf) 
