@@ -7,3 +7,4 @@ This GitHub repository contains projects and other materials that I, Alex Moore,
  - [OS Internals - File System](https://github.com/AMoore86/Portfolio/tree/main/OS%20Internals%20-%20File%20System)
  - [System Simulation](https://github.com/AMoore86/Portfolio/tree/main/System%20Simulation)
  - [Secure Computing Practices](https://github.com/AMoore86/Portfolio/tree/main/Secure%20Computing%20Practices%20-%20Reports)
+- [Linked List Project](https://github.com/AMoore86/Portfolio/tree/main/Linked%20List%20Project)
