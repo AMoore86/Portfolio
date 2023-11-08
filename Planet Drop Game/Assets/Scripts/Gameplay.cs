@@ -10,6 +10,10 @@ public class Gameplay : MonoBehaviour
 {
     #region Inspecter Values
 
+    private MainMenu menuManager;
+    [HideInInspector]
+    public bool easyMode;
+
     [Header("Dropper")]
     [SerializeField]
     private Transform dropper;
@@ -20,7 +24,7 @@ public class Gameplay : MonoBehaviour
     [SerializeField]
     private GameObject guideline;
     [SerializeField]
-    private Transform sensor, staticSensor;
+    private Transform sensor, secondarySensor, staticSensor;
     
     [Header("Drops")]
     public List<GameObject> drops = new List<GameObject>();
@@ -29,6 +33,7 @@ public class Gameplay : MonoBehaviour
     public Transform dropsSpawned;
 
     [Header("HUD")]
+    public Transform background;
     [SerializeField]
     private GameObject HUD;
     [SerializeField]
@@ -59,7 +64,7 @@ public class Gameplay : MonoBehaviour
     private GameObject currentDrop;
     private float currentRadius;
 
-    private RaycastHit2D ray;
+    private RaycastHit2D ray, staticRay;
 
     [HideInInspector]
     public bool endGame;
@@ -80,9 +85,12 @@ public class Gameplay : MonoBehaviour
         HUD.SetActive(true);
         EndHUD.SetActive(false);
 
+        menuManager = GameObject.FindObjectOfType<MainMenu>();
+        if(menuManager != null)
+            easyMode = menuManager.easyMode;
 
         //Initialize drop queue for start of game
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
             upcomingDrops.Enqueue(drops[Random.Range(0, 5)]);
 
         //Pull the next drop from the queue and hold it at dropper's location
@@ -114,8 +122,9 @@ public class Gameplay : MonoBehaviour
             Elevator(ray.collider, 1f);
 
         //Raycast to check if dropper needs to move downward
-        ray = Physics2D.Raycast(staticSensor.position, Vector2.right, 40f);
-        if (ray.collider == null && dropper.position.y > 4f)
+        staticRay = Physics2D.Raycast(staticSensor.position, Vector2.right, 40f);
+        ray = Physics2D.Raycast(secondarySensor.position, Vector2.right, 40f);
+        if ((ray.collider == null || staticRay.collider == null) && dropper.position.y > 4f)
             Elevator(ray.collider, -1f);
 
         //Force dropper within container boundaries
@@ -135,7 +144,7 @@ public class Gameplay : MonoBehaviour
             dropper.position += Vector3.right * moveSpeed * Time.deltaTime;
 
         //Drop whatever the dropper is currently holding
-        if (Input.GetKeyDown(KeyCode.Space) && upcomingDrops.Count == 2)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && upcomingDrops.Count == 2)
             Drop();
 
         //Toggle pause modal
@@ -196,11 +205,17 @@ public class Gameplay : MonoBehaviour
     private int GetHighScore()
     {
         int hs = 0;
+        string filename = "";
+
+        if (easyMode)
+            filename = "easy_highscore.txt";
+        else
+            filename = "highscore.txt";
 
         //Retrieving a highscore if one is saved locally
-        if (File.Exists("highscore.txt"))
+        if (File.Exists(filename))
         {
-            StreamReader reader = new StreamReader("highscore.txt");
+            StreamReader reader = new StreamReader(filename);
 
             hs = System.Int32.Parse(reader.ReadLine());
 
@@ -341,33 +356,51 @@ public class Gameplay : MonoBehaviour
         HUD.SetActive(false);
         EndHUD.SetActive(true);
 
-        //High score is updated if necessary
-        if (highScore < currentScore)
-        {
-            StreamWriter sw = File.CreateText("highscore.txt");
-
-            sw.WriteLine(currentScore.ToString());
-            
-            sw.Close();
-        }
+        SaveHighScore();
     }
 
     public void Retry()
     {
+        SaveHighScore();
+
         //Reload the current game scene
         SceneManager.LoadScene("Gameplay");
     }
 
     public void ExitToMenu()
     {
+        SaveHighScore();
+
         //Load the main menu
         SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitApp()
     {
+        SaveHighScore();
+
         //Close the application
         Application.Quit();
+    }
+
+    private void SaveHighScore()
+    {
+        string filename = "";
+
+        if (easyMode)
+            filename = "easy_highscore.txt";
+        else
+            filename = "highscore.txt";
+
+        //High score is updated if necessary
+        if (highScore < currentScore)
+        {
+            StreamWriter sw = File.CreateText(filename);
+
+            sw.WriteLine(currentScore.ToString());
+
+            sw.Close();
+        }
     }
     #endregion
 }

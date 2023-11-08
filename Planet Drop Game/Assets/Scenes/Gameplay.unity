@@ -1793,11 +1793,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a801164c60affe641af0ee1b3ffb43d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  easyMode: 0
   dropper: {fileID: 1519343116}
   dropPoint: {fileID: 386561377}
   moveSpeed: 3
   guideline: {fileID: 2094656505}
   sensor: {fileID: 42664863}
+  secondarySensor: {fileID: 1957377520}
   staticSensor: {fileID: 1056360964}
   drops:
   - {fileID: 5866707554112857873, guid: f69bb1dab6bb6954f873cd22b6550325, type: 3}
@@ -1811,6 +1813,7 @@ MonoBehaviour:
   - {fileID: 6912140335366851132, guid: 092fc6b341f21a045b71357a4a0b7b35, type: 3}
   - {fileID: 5147261006487048010, guid: f11acf12b94562b4f962fc770f755d28, type: 3}
   dropsSpawned: {fileID: 984064392}
+  background: {fileID: 2093947057}
   HUD: {fileID: 654394588}
   scoreBubble: {fileID: 2000508782}
   highscoreBubble: {fileID: 1058448611}
@@ -5003,6 +5006,7 @@ Transform:
   - {fileID: 386561377}
   - {fileID: 2094656506}
   - {fileID: 42664863}
+  - {fileID: 1957377520}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5544,6 +5548,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1957377519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1957377520}
+  m_Layer: 0
+  m_Name: Secondary Sensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1957377520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957377519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20, y: -2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1519343116}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1959783450
 GameObject:
