@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "No Shorts Redirector",
+  "version": "1.0",
+  "description": "Redirects to YouTube.com if you are watching shorts",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+			"run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}

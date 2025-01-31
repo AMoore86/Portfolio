@@ -1,0 +1,29 @@
+.slider-container {
+	margin-bottom: 20px;
+}
+
+.slider {
+	width: 300px;
+	margin-right: 10px;
+}
+
+.input-field {
+	width: 60px;
+}
+
+.text-fields-labels {
+	display: flex;
+	align-items: center;  /* Vertically align text with input field */
+	p {
+		margin-left: 15px;
+	}
+}
+
+.warning {
+	color: red;
+	visibility: hidden;
+}
+
+button {
+	width: auto;
+}

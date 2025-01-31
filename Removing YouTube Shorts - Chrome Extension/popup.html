@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Sliders</title>
+	<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+	<h1>YouTube Without Shorts</h1>
+  <div class="slider-container">
+    <label for="slider1">Time Until This Ext Stops Running After Page Load:</label>
+    <input type="range" id="slider1" class="slider" min="0" max="300" value="30">
+		<div class="text-fields-labels">
+			<input type="number" id="input1" class="input-field" min="0" max="300" value="30">
+			<p>seconds</p>
+		</div>
+		<p id="warning1" class="warning">* When set to 0, the extension will run indefinitely.</p>
+  </div>
+  <div class="slider-container">
+    <label for="slider2">Time Interval of Each Check:</label>
+    <input type="range" id="slider2" class="slider" min="0" max="300" value="5">
+		<div class="text-fields-labels">
+			<input type="number" id="input2" class="input-field" min="0" max="300" value="5">
+			<p>seconds</p>
+		</div>
+		<p id="warning2" class="warning">* When set to zero, the extension will only run once (at time specified above)</p>
+  </div>
+	<div>
+		<button id="sendBtn">Confirm Changes</button>
+		<button id="refresh">Refresh Page</button>
+	</div>
+	<script src="popup.js"></script>
+</body>
+</html>
